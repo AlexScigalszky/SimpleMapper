@@ -1,6 +1,4 @@
-﻿using SimpleMapper;
-
-namespace Mappear
+﻿namespace SimpleMapper
 {
     public class SimpleMapper : ISimpleMapper
     {

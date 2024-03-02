@@ -6,11 +6,11 @@ namespace Mappear
 {
     public static class SimpleMapperDependecyInjection
     {
-        public static void AddSimpleMapper(this IServiceCollection serviceCollection)
+        public static IServiceCollection AddSimpleMapper(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped(implementationFactory =>
+            return serviceCollection.AddScoped(implementationFactory =>
             {
-                var mapper = new SimpleMapper();
+                var mapper = new SimpleMapper.SimpleMapper();
                 var instances = Assembly.GetExecutingAssembly()
                     .GetTypes()
                     .Where(t => t.GetInterfaces().Contains(typeof(IClassMapper)))

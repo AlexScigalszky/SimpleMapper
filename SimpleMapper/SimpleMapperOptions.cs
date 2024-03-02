@@ -1,4 +1,4 @@
-﻿namespace Mappear
+﻿namespace SimpleMapper
 {
     public class SimpleMapperOptions
     {
