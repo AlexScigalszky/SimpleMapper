@@ -10,7 +10,7 @@ namespace Mappear.Tests
         {
             var source1 = Source.Simple();
             var source2 = Source2.Simple();
-            var simpleMapper = new SimpleMapper();
+            var simpleMapper = new SimpleMapper.SimpleMapper();
 
             simpleMapper.Bind((Source s) => new Target()
             {
@@ -45,7 +45,7 @@ namespace Mappear.Tests
         [TestMethod()]
         public void GivenNotBinded_WhenMap_ThenThrowNotSupportedException()
         {
-            var simpleMapper = new SimpleMapper();
+            var simpleMapper = new SimpleMapper.SimpleMapper();
             var source = Source.Simple();
 
             Assert.ThrowsException<NotSupportedException>(() => simpleMapper.Map<Source, Target>(source), "Mapper function not found");
@@ -54,7 +54,7 @@ namespace Mappear.Tests
         [TestMethod()]
         public void GivenBindFnError_WhenMap_ThenThrowException()
         {
-            var simpleMapper = new SimpleMapper();
+            var simpleMapper = new SimpleMapper.SimpleMapper();
             var source = Source.Simple();
             simpleMapper.Bind((Source s) => throw new Exception("exception forced"));
 
@@ -64,7 +64,7 @@ namespace Mappear.Tests
         [TestMethod()]
         public void GivenBindFnErrorAndErrorHandling_WhenMap_ThenThrowException()
         {
-            var simpleMapper = new SimpleMapper(new() { ExceptionHandling = true });
+            var simpleMapper = new SimpleMapper.SimpleMapper(new() { ExceptionHandling = true });
             var source1 = Source.Simple();
             var source2 = Source2.Simple();
             simpleMapper.Bind((Source s) => throw new Exception("exception forced"));
