@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SimpleMapper;
-using System.Reflection;
 
-namespace Mappear
+namespace SimpleMapper.ServiceDiscovery
 {
-    public static class SimpleMapperDependecyInjection
+    public class SimpleMapperDependecyInjection
     {
         public static IServiceCollection AddSimpleMapper(this IServiceCollection serviceCollection)
         {

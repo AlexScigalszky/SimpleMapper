@@ -4,10 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>FunctionSimpleMapper</PackageId>
+    <Authors>FunctionSimpleMapper</Authors>
+    <Company>FunctionSimpleMapper</Company>
+    <Product>FunctionSimpleMapper</Product>
+    <RepositoryUrl>https://github.com/AlexScigalszky/SimpleMapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AlexScigalszky/SimpleMapper</PackageProjectUrl>
+    <Copyright>Apache License</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
-  </ItemGroup>
 
 </Project>
