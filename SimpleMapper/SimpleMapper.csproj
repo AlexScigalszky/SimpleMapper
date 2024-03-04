@@ -11,6 +11,18 @@
     <RepositoryUrl>https://github.com/AlexScigalszky/SimpleMapper</RepositoryUrl>
     <PackageProjectUrl>https://github.com/AlexScigalszky/SimpleMapper</PackageProjectUrl>
     <Copyright>Apache License</Copyright>
+    <Title>Simple Function Mapper Library</Title>
+    <Description>Set a Map Function and then this library will execute the mapping according to the Source class</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>DI, Mapper, Map, Simple, FunctionSimpleMapper</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
