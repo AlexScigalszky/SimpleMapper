@@ -1,24 +1,5 @@
 ﻿using SimpleMapper.Console;
 
-var user = new User()
-{
-    Name = "Jonh",
-    Age = 33,
-    Created = DateTime.Now,
-};
+Console.WriteLine(DirectMapping.Run());
 
-var mapper = new SimpleMapper.SimpleMapper();
-mapper.Bind((User user) => new UserDTO()
-{
-    Name = user.Name,
-    Age = user.Age,
-    Created = user.Created,
-});
-
-var userDto = mapper.Map<User, UserDTO>(user);
-Console.WriteLine(
-    $"{userDto.GetType()} => " +
-    $"Name: {userDto.Age}," +
-    $"Age: {userDto.Age}," +
-    $"Created: {userDto.Created}"
-);
+Console.WriteLine(DependecyInjection.Run());

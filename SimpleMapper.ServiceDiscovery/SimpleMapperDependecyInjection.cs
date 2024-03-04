@@ -1,14 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace SimpleMapper.ServiceDiscovery
 {
-    public class SimpleMapperDependecyInjection
+    public static class SimpleMapperDependecyInjection
     {
         public static IServiceCollection AddSimpleMapper(this IServiceCollection serviceCollection)
         {
-            return serviceCollection.AddScoped(implementationFactory =>
+            return serviceCollection.AddScoped<ISimpleMapper>(implementationFactory =>
             {
-                var mapper = new SimpleMapper.SimpleMapper();
+                var mapper = new SimpleMapper();
                 var instances = Assembly.GetExecutingAssembly()
                     .GetTypes()
                     .Where(t => t.GetInterfaces().Contains(typeof(IClassMapper)))
