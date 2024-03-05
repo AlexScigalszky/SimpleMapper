@@ -17,9 +17,9 @@
     <PackageTags>service discovery, DI, Mapper, Map, Simple, FunctionSimpleMapper</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <FileVersion>1.0.0.3</FileVersion>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <Version>1.0.3</Version>
+    <FileVersion>1.0.0.4</FileVersion>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
