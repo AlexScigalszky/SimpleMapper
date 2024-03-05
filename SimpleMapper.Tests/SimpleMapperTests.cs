@@ -19,6 +19,13 @@ namespace Mappear.Tests
                 Description = s.Description,
             });
 
+            simpleMapper.Bind<Source, Target2>((Source s) => new Target2()
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Description = s.Description,
+            });
+
             simpleMapper.Bind((Source2 s) => new Target2()
             {
                 Id = s.Id,
@@ -26,8 +33,9 @@ namespace Mappear.Tests
                 Description = s.Description,
             });
 
-            Target actual1 = simpleMapper.Map<Source, Target>(source1);
-            Target2 actual2 = simpleMapper.Map<Source2, Target2>(source2);
+            var actual1 = simpleMapper.Map<Source, Target>(source1);
+            var actual2 = simpleMapper.Map<Source2, Target2>(source2);
+            var actual3 = simpleMapper.Map<Source, Target2>(source1);
 
             Assert.IsNotNull(actual1);
             Assert.IsInstanceOfType<Target>(actual1);
@@ -40,6 +48,12 @@ namespace Mappear.Tests
             Assert.AreEqual(source2.Id, actual2.Id);
             Assert.AreEqual(source2.Name, actual2.Name);
             Assert.AreEqual(source2.Description, actual2.Description);
+
+            Assert.IsNotNull(actual3);
+            Assert.IsInstanceOfType<Target2>(actual3);
+            Assert.AreEqual(source1.Id, actual3.Id);
+            Assert.AreEqual(source1.Name, actual3.Name);
+            Assert.AreEqual(source1.Description, actual3.Description);
         }
 
         [TestMethod()]
