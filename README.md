@@ -4,31 +4,31 @@ The Simplest mapper possible with DI included. Define the mapper function in onc
 # How to use it
 You can get the service from the serviceProvider
 
-´´´C#
+```csharp
 var mapper = serviceProvider.GetService<ISimpleMapper>();
-´´´
+```
 
 Or use the interface in your class.
-´´´C#
+```csharp
 public Controller(ISimpleMapper simpleMapper){
     ...
 }
-´´´
+```
 
 Then you can map the object specifying the source and target class.
-´´´C#
+```csharp
 var userDto = simpleMapper.Map<User, UserDTO>(user);
-´´´
+```
 
 or just the source class. You can only set only class using this way.
-´´´C#
+```csharp
 var userDto = simpleMapper.Map<User>(user);
-´´´
+```
 
 # How to create Mapper classes
 
 Implement the IClassMapper. Then the FunctionSimpleMapper.Extensions will get the binding function.
-´´´C#
+```csharp
 public class UserMapper : IClassMapper
 {
     public void Bind(ISimpleMapper mapper)
@@ -40,13 +40,13 @@ public class UserMapper : IClassMapper
             });
     }
 }
-´´´
+```
 
 Add the service to de ServiceCollection.
-´´´c#
+```csharp
 var serviceProvider = new ServiceCollection()
                 .AddSimpleMapper() <-- Add this line
                 .BuildServiceProvider();
-´´´
+```
 
 
