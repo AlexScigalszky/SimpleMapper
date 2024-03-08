@@ -63,5 +63,3 @@ var serviceProvider = new ServiceCollection()
                 .AddSimpleMapper() <-- Add this line
                 .BuildServiceProvider();
 ```
-
-
