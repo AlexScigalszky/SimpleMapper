@@ -1,9 +1,13 @@
 # SimpleMapper
-The Simplest mapper possible with DI included. Define the mapper function in once side and use it everywhere
+The Simplest mapper possible with DI included. Define the mapper function on once side and use it everywhere
 
 # How to use it
-You can get the service from the serviceProvider
+SimpleMapper Creation
+```csharp
+var mapper = new SimpleMapper();
+```
 
+You can get the service from the serviceProvider
 ```csharp
 var mapper = serviceProvider.GetService<ISimpleMapper>();
 ```
@@ -20,11 +24,22 @@ Then you can map the object specifying the source and target class.
 var userDto = simpleMapper.Map<User, UserDTO>(user);
 ```
 
-or just the source class. You can only set only class using this way.
+or just the source class. You can only set only class this way.
 ```csharp
 var userDto = simpleMapper.Map<User>(user);
 ```
 
+
+# How to create Mapper function
+
+Create a function a bind it to the mapper
+```csharp
+mapper.Bind((User s) => new UserDTO()
+    {
+        Id = s.Id,
+        Name = s.Name,
+    });
+```
 # How to create Mapper classes
 
 Implement the IClassMapper. Then the FunctionSimpleMapper.Extensions will get the binding function.
